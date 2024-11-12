@@ -2,6 +2,11 @@
 This repository contains docker related configs to quickly build development environment
 
 ## Build a customized docker image from Dockerfile
+Clone the repository with submodules
+```shell
+git clone --recurse-submodules git@github.com:kalfazed/fs-perc-train.git
+git submodule update --remote
+```
 Please use following script to build the docker image
 ```shell
 bash ./build.sh <image_name> <shell_name>
