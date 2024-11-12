@@ -52,6 +52,13 @@ USER ${USERNAME}
 WORKDIR /home/${USERNAME}/.dot_files
 RUN bash install.sh ${SHELLNAME}
 
+# Install miniconda
+RUN mkdir -p /home/${USERNAME}/miniconda3 && \
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /home/${USERNAME}/miniconda3/miniconda.sh && \
+    bash /home/${USERNAME}/miniconda3/miniconda.sh -b -u -p /home/${USERNAME}/miniconda3 && \
+    rm /home/${USERNAME}/miniconda3/miniconda.sh && \
+    /home/${USERNAME}/miniconda3/bin/conda init --all
+
 # Set the working directory to the new user's home directory
 WORKDIR /home/${USERNAME}
 

@@ -30,9 +30,10 @@ In default, some helpful tools and configurations are installed from [my_dot_fil
 
 
 ## Create a container based on the image
-Please use following script to launch a container
+Please use following script to launch a container. If your are using docker with `nvidia-container-toolkit` supported, please use `run.sh cuda`. Otherwise, `run.sh general` is sufficient.
 ```shell
-bash ./run.sh <image_name> <contaner_name>
+bash ./run.sh general --image_name <image_name> --container_name <contaner_name>
+bash ./run.sh cuda --image_name <image_name> --container_name <contaner_name>
 ```
 It will launch a container in the background. You can attach to it using `docker attach`. Since the ssh server is installed, you can also `ssh` to the 
 container using `ssh ${username}@ip -p 2222`.
