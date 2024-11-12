@@ -1,6 +1,9 @@
 # Building Docker Environment
 This repository contains docker related configs to quickly build development environment
 
+## Prerequisite
+Please make sure you installed `docker` and `nvidia-container-toolkit` in your host. 
+
 ## Build a customized docker image from Dockerfile
 Clone the repository with submodules
 ```shell
@@ -28,6 +31,11 @@ RUN sed -i 's|http://archive.ubuntu.com/ubuntu|http://jp.archive.ubuntu.com/ubun
 
 In default, some helpful tools and configurations are installed from [my_dot_files](https://github.com/kalfazed/my_dot_files). It contains a lot of features to accelearte your develops.
 
+## (Optional) Pull from docker hub
+You can also skip the building process by pulling from docker hub.
+```shell
+docker pull kalfazed/trt-dev:cuda12.1-cudnn8.9-trt8.6
+```
 
 ## Create a container based on the image
 Please use following script to launch a container. If your are using docker with `nvidia-container-toolkit` supported, please use `run.sh cuda`. Otherwise, `run.sh general` is sufficient.
