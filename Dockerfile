@@ -1,5 +1,5 @@
 # Start from Ubuntu 22.04 latest image
-FROM ubuntu:22.04
+FROM nvcr.io/nvidia/tensorrt:23.08-py3
 ENV TZ=Asia/Tokyo
 
 # Set timezone in case of interation during installation
