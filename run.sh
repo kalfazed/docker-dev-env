@@ -49,6 +49,7 @@ function create_cuda_container () {
     docker run -dit \
         --name $2 \
         --gpus all \
+        --shm-size=16g \
         -v ~/ghq/:/home/$(whoami)/ghq/ \
         -v ~/data/:/home/$(whoami)/data/ \
         -v ~/Packages/:/home/$(whoami)/Packages/ \
@@ -63,6 +64,7 @@ function create_general_container () {
     echo "Creat and start a new general container: $2"
     docker run -dit \
         --name $2 \
+        --shm-size=16g \
         -v ~/ghq/:/home/$(whoami)/ghq/ \
         -v ~/data/:/home/$(whoami)/data/ \
         -v ~/Packages/:/home/$(whoami)/Packages/ \
